@@ -1,7 +1,7 @@
 package com.agni.service;
 
+import com.agni.domain.TimeTrack;
 import com.agni.model.EmployeeLogInDetailDTO;
-import org.springframework.stereotype.Service;
 
 /**
  * Created by xprk459 on 2/27/2017.
@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 
 public interface LogInOutTimeService {
 
-    public void logInTime(EmployeeLogInDetailDTO employeeLogInDetail);
+    public void logInTime(TimeTrack timeTrack);
 
     public void logOutTime(EmployeeLogInDetailDTO employeeLogInDetail);
 

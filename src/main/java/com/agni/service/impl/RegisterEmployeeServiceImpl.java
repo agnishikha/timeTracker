@@ -17,7 +17,7 @@ public class RegisterEmployeeServiceImpl implements RegisterEmployeeService {
 
     @Override
     public void registerEmployee(Employee employee) {
-        registerEmployeeRepository.save(employee);
+        Employee employee1 = registerEmployeeRepository.save(employee);
 
     }
 }

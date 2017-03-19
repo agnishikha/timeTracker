@@ -1,8 +1,8 @@
 package com.agni.controller;
 
+import com.agni.domain.TimeTrack;
 import com.agni.model.EmployeeLogInDetailDTO;
 import com.agni.service.LogInOutTimeService;
-import jdk.internal.org.objectweb.asm.tree.analysis.Value;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -19,8 +19,8 @@ public class LogInOutTimeController {
     private LogInOutTimeService logInOutTimeService;
 
     @RequestMapping(value="/logInTime",method= RequestMethod.POST)
-    public void logInTime(@RequestBody EmployeeLogInDetailDTO employeeLogInDetail){
-        logInOutTimeService.logInTime(employeeLogInDetail);
+    public void logInTime(@RequestBody TimeTrack timeTrack){
+        logInOutTimeService.logInTime(timeTrack);
     }
 
     @RequestMapping(value="/logOutTime",method= RequestMethod.POST)

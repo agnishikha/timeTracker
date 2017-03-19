@@ -1,14 +1,16 @@
 package com.agni.domain;
 
 import javax.persistence.*;
+import java.io.Serializable;
+import java.util.Collection;
 
 /**
  * Created by xprk459 on 2/28/2017.
  */
 @Entity
-public class Employee {
+public class Employee implements Serializable{
     @Id //signifies the primary key
-    @Column(nullable = false)
+    @Column(name="emp_id",nullable = false)
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
 
@@ -26,6 +28,17 @@ public class Employee {
 
     @Column(nullable = false)
     private String lastName;
+
+    @ManyToMany
+    private Collection<Roles> roles;
+
+    public Collection<Roles> getRoles() {
+        return roles;
+    }
+
+    public void setRoles(Collection<Roles> roles) {
+        this.roles = roles;
+    }
 
     public int getId() {
         return id;
