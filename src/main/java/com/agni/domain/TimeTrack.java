@@ -18,6 +18,17 @@ public class TimeTrack implements Serializable {
 
     private Date logOuttime;
 
+    private transient int empId;
+
+    public int getEmpId() {
+        return empId;
+    }
+
+    public void setEmpId(int empId) {
+        this.empId = empId;
+    }
+
+
 
 
     @ManyToOne(optional=false,fetch = FetchType.EAGER,cascade=CascadeType.ALL)

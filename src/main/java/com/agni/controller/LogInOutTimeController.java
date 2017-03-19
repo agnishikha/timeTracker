@@ -18,8 +18,10 @@ public class LogInOutTimeController {
     @Autowired
     private LogInOutTimeService logInOutTimeService;
 
+
     @RequestMapping(value="/logInTime",method= RequestMethod.POST)
     public void logInTime(@RequestBody TimeTrack timeTrack){
+
         logInOutTimeService.logInTime(timeTrack);
     }
 

@@ -2,6 +2,8 @@ package com.agni.service.impl;
 
 import com.agni.domain.TimeTrack;
 import com.agni.model.EmployeeLogInDetailDTO;
+import com.agni.repository.EmployeeRepository;
+import com.agni.repository.RolesRepository;
 import com.agni.repository.TimeTrackRepository;
 import com.agni.service.LogInOutTimeService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,8 +18,16 @@ public class LogInOutServiceImpl implements LogInOutTimeService {
     @Autowired
     TimeTrackRepository timeTrackRepository;
 
+    @Autowired
+    private EmployeeRepository employeeRepository;
+
+    @Autowired
+    RolesRepository rolesRepository;
+
     @Override
     public void logInTime(TimeTrack timeTrack) {
+        timeTrack.setEmployee(employeeRepository.findOne(timeTrack.getEmpId()));
+      //  timeTrack.getEmployee().setRoles();
         timeTrackRepository.save(timeTrack);
     }
 
